@@ -1,0 +1,135 @@
+@font-face {
+    font-family: roboto;
+    src: url(assets/fonts/roboto/Roboto-Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: roboto;
+}
+
+.main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+}
+
+.loaderBox {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.loader {
+    width: 50px;
+    --b: 8px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #514b82;
+    -webkit-mask:
+        repeating-conic-gradient(#0000 0deg, #000 1deg 70deg, #0000 71deg 90deg),
+        radial-gradient(farthest-side, #0000 calc(100% - var(--b) - 1px), #000 calc(100% - var(--b)));
+    -webkit-mask-composite: destination-in;
+    mask-composite: intersect;
+    animation: l5 1s infinite;
+}
+
+@keyframes l5 {
+    to {
+        transform: rotate(.5turn)
+    }
+}
+
+
+.weatherBox {
+    width: 350px;
+    height: 400px;
+    background: linear-gradient(to bottom, rgb(0, 0, 0), 70%, rgb(59, 111, 118));
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.inputBox {
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: fit-content;
+}
+
+#searchInput {
+    width: 70%;
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}
+
+#searchButton {
+    cursor: pointer;
+    background-color: aliceblue;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.allData {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+.timeLocation {
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+.clipArt {
+    color: #ffffff;
+}
+
+.clipArt img {
+    width: 150px;
+}
+
+.dataBox {
+    color: #ffffff;
+}
+
+.temperature h1 {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.temperature sup {
+    font-size: 25px;
+}
+
+.hide {
+    display: none;
+}
+
+@media screen and (max-width: 429px) {
+    .weatherBox {
+        height: 400px;
+        padding: 20px;
+        width: 80%;
+    }
+}
